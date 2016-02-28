@@ -7,6 +7,9 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
 
   received: (data) ->
     console.log("received")
-    console.log(data)
+    switch data.event_type
+      when "heartbeat"
+        console.log("heartbeat")
+        $("#current-state").html data.content
 
 
