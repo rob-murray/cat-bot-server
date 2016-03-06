@@ -6,4 +6,12 @@ class Heartbeat < ApplicationRecord
   def self.latest
     order(:created_at).last
   end
+
+  def self.recent
+    order(:created_at).last(5)
+  end
+
+  def name
+    "Heartbeat"
+  end
 end

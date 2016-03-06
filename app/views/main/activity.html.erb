@@ -1,5 +1,34 @@
-<h1>Main#activity</h1>
 
-<div id="current-state">
-  <%= render partial: "heartbeats/heartbeat", locals: { heartbeat: @heartbeat } %>
+<nav id="nav" class="row">
+  <div class="eight columns">
+    <h1>CatBot &#x1F63A;</h1>
+  </div>
+
+  <div class="four columns">
+    <%= render partial: "application/user_bar" %>
+  </div>
+</nav><!-- /header row -->
+
+<section class="row">
+  <div id="activity" class="eight columns offset-by-two">
+    <div class="eight columns">
+      <%= render partial: "feeds/feed_status", locals: { feed_status: @current_feed_status } %>
+    </div>
+
+    <div class="four columns">
+      <div class="u-pull-right">
+        <span id="heart" class="heart"></span>
+      </div>
+      <div class="u-cf"></div>
+      <div id="feed-btn-ctnr" class="u-pull-right">
+        <a id="feed-btn" class="button u-pull-right" href="#">Feed</a>
+      </div>
+    </div>
+
+    <div class="twelve columns">
+      <h5>Events</h5>
+
+      <%= render partial: "events/list", locals: { events: @latest_events } %>
+    </div>
+  </div>
 </div>

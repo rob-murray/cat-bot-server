@@ -6,10 +6,13 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
     #
 
   received: (data) ->
-    console.log("received")
+    console.log("ActivityChannel.received: "+JSON.stringify(data))
+
     switch data.event_type
       when "heartbeat"
-        console.log("heartbeat")
-        $("#current-state").html data.content
-
-
+        $heart = $("#heart")
+        $heart.addClass "beat"
+        setTimeout (->
+          $heart.removeClass "beat"
+          return
+        ), 2000

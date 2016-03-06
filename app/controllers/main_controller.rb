@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def activity
-    @heartbeat = Heartbeat.latest
+    @current_feed_status = FeedStatus.from_heartbeat(Heartbeat.latest)
+    @latest_events = Heartbeat.recent
   end
 end

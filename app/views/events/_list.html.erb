@@ -1,0 +1,10 @@
+<table class="u-full-width">
+  <tbody>
+    <% events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td>Occured at: <%= event.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

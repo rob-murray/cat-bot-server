@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.0'
 
 #gem 'devise', '~> 3.5' # 3.5.latest is not compatible with rails 5 atm
 gem 'devise', github: 'plataformatec/devise'
+gem 'font-awesome-rails'
+gem 'compass-rails'
 
 group :development, :test do
   gem 'byebug'
