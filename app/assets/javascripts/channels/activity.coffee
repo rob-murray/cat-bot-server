@@ -20,3 +20,5 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
           $heart.removeClass "beat"
           return
         ), 2000
+
+        # todo: update feed status, heartbeat event in list

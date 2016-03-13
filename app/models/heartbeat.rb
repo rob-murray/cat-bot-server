@@ -29,7 +29,7 @@ class Heartbeat < ApplicationRecord
   end
 
   def self.recent
-    order(:created_at).last(5)
+    order(created_at: :desc).last(5)
   end
 
   def self.build_from(payload)
