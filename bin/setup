@@ -33,5 +33,5 @@ chdir APP_ROOT do
   system! 'bin/rails restart'
 
   puts "\n== Running dev setup =="
-  bundle exec rake dev:setup
+  system! 'bundle exec rake dev:setup'
 end

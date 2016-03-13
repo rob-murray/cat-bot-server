@@ -1,9 +1,13 @@
 App.activity = App.cable.subscriptions.create "ActivityChannel",
   connected: ->
-    #
+    $status = $("#connection-status")
+    $status.removeClass("not-connected")
+    $status.addClass("connected")
 
   disconnected: ->
-    #
+    $status = $("#connection-status")
+    $status.removeClass("connected")
+    $status.addClass("not-connected")
 
   received: (data) ->
     console.log("ActivityChannel.received: "+JSON.stringify(data))

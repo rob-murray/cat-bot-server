@@ -5,7 +5,7 @@ body {
 }
 
 section {
-  margin-top: 180px;
+  margin-top: 10vh;
 }
 
 #activity {
@@ -18,4 +18,12 @@ section {
 
 #feed-btn-ctnr {
   margin-top: 15px;
+}
+
+.not-connected {
+  color: red;
+}
+
+.connected {
+  color: green;
 }

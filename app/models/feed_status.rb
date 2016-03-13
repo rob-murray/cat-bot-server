@@ -1,8 +1,8 @@
 class FeedStatus
   def self.from_heartbeat(heartbeat)
     new(
-      next_feed: "evening",
-      remaining_feeds: 1,
+      next_feed: heartbeat.next_feed,
+      remaining_feeds: heartbeat.remaining_feeds,
       updated_at: heartbeat.created_at
     )
   end

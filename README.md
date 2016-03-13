@@ -20,6 +20,12 @@ We accept incoming events from the **cat-bot** hardware and then update the UI w
 1. Run setup `$ bin/setup`
 1. Go. `$ bin/rails s`
 
+## API
+
+```
+$ curl -H "Content-Type: application/json" -X POST -d '{"event":{"name":"heartbeat","payload":{"next_feed":"evening","remaining_feeds":1}}}' http://localhost:3000/events
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/rob-murray/cat-bot-server. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160306132757) do
   enable_extension "plpgsql"
 
   create_table "heartbeats", force: :cascade do |t|
-    t.jsonb    "message",    default: {}, null: false
+    t.jsonb    "payload",    default: {}, null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise', github: 'plataformatec/devise'
 gem 'font-awesome-rails'
 gem 'compass-rails'
+gem 'virtus'
 
 group :development, :test do
   gem 'byebug'
