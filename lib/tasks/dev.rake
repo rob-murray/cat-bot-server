@@ -11,7 +11,10 @@ namespace :dev do
   def create_users
     header "Users"
 
-    params = { email: "test@test.com", password: "password" }
+    params = [
+      { email: "test@test.com", password: "password" },
+      { email: "api@test.com", password: "password" }
+    ]
     puts "creating user: #{params}"
     User.create!(params)
   end

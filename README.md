@@ -23,7 +23,7 @@ We accept incoming events from the **cat-bot** hardware and then update the UI w
 ## API
 
 ```
-$ curl -H "Content-Type: application/json" -X POST -d '{"event":{"name":"heartbeat","payload":{"next_feed":"evening","remaining_feeds":1}}}' http://localhost:3000/events
+$ curl -H "Content-Type: application/json" -X POST -d '{"event":{"name":"heartbeat","payload":{"next_feed":"evening","remaining_feeds":1}},"user_email":"api@test.com","user_token":"generated"}' http://localhost:3000/events
 ```
 
 ## Contributing

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  skip_before_action :authenticate_user!
+  protect_from_forgery with: :null_session
+  prepend_before_action :authenticate_user_from_token!
   respond_to :json
 
   if Rails.env.production?
@@ -33,5 +33,15 @@ class EventsController < ApplicationController
 
   def something_went_wrong
     render json: { error: "Something went wrong" }, status: :internal_server_error
+  end
+
+  # replicate devise token auth; https://gist.github.com/josevalim/fb706b1e933ef01e4fb6
+  def authenticate_user_from_token!
+    user_email = params[:user_email].presence
+    user       = user_email && User.find_by_email(user_email)
+
+    if user && Devise.secure_compare(user.authentication_token, params[:user_token])
+      sign_in user, store: false
+    end
   end
 end
