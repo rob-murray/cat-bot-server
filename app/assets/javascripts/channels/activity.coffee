@@ -21,5 +21,5 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
           return
         ), 2000
 
-        # todo: update feed status
-        $("#events tbody").prepend(data.content)
+        $("#feed_status").html(data.feed_status_content)
+        $("#events tbody").prepend(data.event_row)
