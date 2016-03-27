@@ -21,4 +21,5 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
           return
         ), 2000
 
-        # todo: update feed status, heartbeat event in list
+        # todo: update feed status
+        $("#events tbody").prepend(data.content)

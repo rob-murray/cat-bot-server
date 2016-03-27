@@ -8,6 +8,6 @@ class HeartbeatBroadcastJob < ApplicationJob
   private
 
   def render_heartbeat(heartbeat)
-    ApplicationController.renderer.render(partial: "heartbeats/heartbeat", locals: { heartbeat: heartbeat })
+    ApplicationController.renderer.render(partial: "events/event_row", locals: { event: heartbeat })
   end
 end

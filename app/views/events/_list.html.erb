@@ -1,4 +1,4 @@
-<table class="u-full-width">
+<table id="events" class="u-full-width">
   <thead>
     <th>Name</th>
     <th>Message</th>
@@ -6,11 +6,7 @@
   </thead>
   <tbody>
     <% events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= format_event_payload(event) %></td>
-        <td><%= l event.created_at, format: :long %></td>
-      </tr>
+      <%= render "events/event_row", event: event %>
     <% end %>
   </tbody>
 </table>
