@@ -1,9 +1,15 @@
 <table class="u-full-width">
+  <thead>
+    <th>Name</th>
+    <th>Message</th>
+    <th>Occured at</th>
+  </thead>
   <tbody>
     <% events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
-        <td>Occured at: <%= event.created_at %></td>
+        <td><%= format_event_payload(event) %></td>
+        <td><%= l event.created_at, format: :long %></td>
       </tr>
     <% end %>
   </tbody>

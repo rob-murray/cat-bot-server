@@ -16,6 +16,10 @@ section {
   box-sizing: border-box;
 }
 
+#activity table th, #activity table td {
+  border-bottom: 1px solid #BBB;
+}
+
 #feed-btn-ctnr {
   margin-top: 15px;
 }

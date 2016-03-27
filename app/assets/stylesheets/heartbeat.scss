@@ -2,6 +2,7 @@
  Animated CSS heartbeat; ripped off from:
   http://codepen.io/jlong/pen/KBhDf
 
+  > Test different sizes:
   > (1..36).select { |i| i % 2 == 0 && i % 3 == 0 }
   => [6, 12, 18, 24, 30, 36]
 **/
